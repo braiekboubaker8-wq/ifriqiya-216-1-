@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Shop | IFRIQYA 216</title>
+
+    <link rel="stylesheet" href="shop.css" />
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- =====================================
+         SHIPPING BAR
+    ====================================== -->
+
+    
+    <!-- =====================================
+         NAVBAR
+    ====================================== -->
+
+    <header class="navbar">
+      <div class="nav-left">
+        <div class="nav-dropdown">
+          
+
+        <a href="about.html" class="nav-link"> THE MISSION </a>
+      </div>
+
+      <!-- CENTER LOGO -->
+
+      <a href="index.html" class="logo">
+        <img src="logo216.png" alt="IFRIQYA 216" />
+      </a>
+
+      <!-- RIGHT -->
+
+      <div class="nav-right">
+        <a href="search.html" class="nav-link">
+          <span class="search-icon">⌕</span>
+          SEARCH
+        </a>
+
+        <a href="account.html" class="nav-link"> ACCOUNT </a>
+      </div>
+    </header>
+
+    <!-- =====================================
+         SHOP TITLE
+    ====================================== -->
+
+    <section class="shop-title">
+      <h1>SHOP</h1>
+
+      <p>IFRIQYA 216 COLLECTION</p>
+    </section>
+
+    <!-- =====================================
+         CATEGORY BAR
+    ====================================== -->
+
+    <div class="category-bar">
+      <a href="#all" class="category active"> ALL </a>
+
+      <a href="#tees" class="category"> TEES </a>
+
+      <a href="#hoodies" class="category"> HOODIES </a>
+
+      <a href="#pants" class="category"> PANTS </a>
+    </div>
+
+    <!-- =====================================
+         PRODUCTS
+    ====================================== -->
+
+    <main class="products">
+      <!-- PRODUCT 1 -->
+
+      <article class="product">
+        <div class="product-image">
+          <img src="ifriqiya 216 black.png" alt="IFRIQIYA T-SHIRT BLACK" />
+
+          
+          <button class="quick-add" onclick="buyNow('IFRIQIYA T-SHIRT BLACK', 50)">
+            BUY NOW
+          </button>
+        </div>
+
+        <div class="product-details">
+          <h2>IFRIQIYA T-SHIRT BLACK</h2>
+
+          <p>50 TND</p>
+
+          <p id="dead">ON STOCK</p>
+        </div>
+      </article>
+
+      <!-- PRODUCT 2 -->
+
+      <article class="product">
+        <div class="product-image">
+          <img src="ifriqiya 216 white.png" alt="Ifriqya Oversized Tee" />
+
+          
+          <button class="quick-add" onclick="buyNow('IFRIQIYA T-SHIRT WHITE', 50)">
+            BUY NOW
+          </button>
+        </div>
+
+        <div class="product-details">
+          <h2>IFRIQIYA T-SHIRT WHITE</h2>
+
+          <p>50 TND</p>
+
+          <p id="dead">ON STOCK</p>
+        </div>
+      </article>
+    </main>
+
+    <!-- =====================================
+         CART NOTIFICATION
+    ====================================== -->
+
+    <div id="cart-notification">
+      <strong>ADDED TO CART</strong>
+
+      <span id="cart-product"></span>
+    </div>
+
+    <!-- =====================================
+         FOOTER
+    ====================================== -->
+
+    <footer>
+      <div class="footer-logo">IFRIQYA 216</div>
+
+      <p>ROOTED IN AFRICA. BUILT FOR THE FUTURE.</p>
+
+      <div class="footer-links">
+        <a href="about.html"> THE MISSION </a>
+
+        <a href="216ig.html"> INSTAGRAM </a>
+
+      </div>
+
+      <small> © 2026 IFRIQYA 216 </small>
+    </footer>
+
+    <!-- =====================================
+         JAVASCRIPT
+    ====================================== -->
+
+    <script>
+        function buyNow(product, price) {
+            window.location.href =
+                "order.html?product=" + encodeURIComponent(product) +
+                "&price=" + price;
+        }
+        </script>
+  </body>
+</html>

@@ -1,0 +1,697 @@
+/* =================================
+   GENERAL
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #050505;
+    color: #f3eee4;
+    font-family: "Montserrat", sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* =================================
+   TOP BAR
+================================= */
+
+.top-bar {
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f3eee4;
+    color: #050505;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+/* =================================
+   NAVBAR
+================================= */
+
+.navbar {
+    height: 90px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 180px 1fr;
+
+    align-items: center;
+
+    padding: 0 45px;
+
+    border-bottom: 1px solid #292929;
+
+    background: #050505;
+}
+
+
+/* LEFT */
+
+.nav-left {
+    display: flex;
+    gap: 35px;
+}
+
+.nav-left a,
+.nav-right a {
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    transition: 0.3s;
+}
+
+.nav-left a:hover,
+.nav-right a:hover {
+    color: #c91524;
+}
+
+
+/* LOGO */
+
+.nav-logo {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+.nav-logo img {
+    width: 95px;
+
+    height: 70px;
+
+    object-fit: contain;
+}
+
+
+/* RIGHT */
+
+.nav-right {
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 30px;
+}
+
+.nav-right .active {
+    color: #c91524;
+}
+
+
+/* =================================
+   ACCOUNT PAGE
+================================= */
+
+.account-page {
+    padding-bottom: 0;
+}
+
+
+/* =================================
+   TITLE
+================================= */
+
+.account-title {
+    text-align: center;
+
+    padding: 110px 20px 90px;
+}
+
+.account-title p {
+    color: #c91524;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 25px;
+}
+
+.account-title h1 {
+    font-family: "Cinzel", serif;
+
+    font-size: clamp(55px, 9vw, 110px);
+
+    font-weight: 600;
+
+    line-height: 0.9;
+}
+
+.account-title span {
+    display: block;
+
+    margin-top: 25px;
+
+    color: #777;
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+}
+
+
+/* =================================
+   ACCOUNT CONTAINER
+================================= */
+
+.account-container {
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 0 40px 120px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 70px;
+}
+
+
+/* =================================
+   ACCOUNT BOX
+================================= */
+
+.account-box {
+    padding: 55px 50px;
+
+    border: 1px solid #292929;
+
+    background: #090909;
+}
+
+.account-box h2 {
+    font-family: "Cinzel", serif;
+
+    font-size: 30px;
+
+    font-weight: 500;
+}
+
+.box-description {
+    margin-top: 15px;
+
+    color: #777;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    max-width: 400px;
+}
+
+
+/* =================================
+   INPUTS
+================================= */
+
+form {
+    margin-top: 45px;
+}
+
+.input-group {
+    margin-bottom: 30px;
+}
+
+.input-group label {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: #999;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.input-group input {
+    width: 100%;
+
+    padding: 17px 5px;
+
+    background: transparent;
+
+    border: none;
+
+    border-bottom: 1px solid #555;
+
+    outline: none;
+
+    color: #f3eee4;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 14px;
+
+    transition: 0.3s;
+}
+
+.input-group input:focus {
+    border-bottom-color: #c91524;
+}
+
+.input-group input::placeholder {
+    color: #444;
+}
+
+
+/* =================================
+   LOGIN OPTIONS
+================================= */
+
+.login-options {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin: 5px 0 35px;
+}
+
+.login-options a {
+    color: #999;
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+
+    transition: 0.3s;
+}
+
+.login-options a:hover {
+    color: #c91524;
+}
+
+
+/* REMEMBER */
+
+.remember {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    cursor: pointer;
+}
+
+.remember input {
+    accent-color: #c91524;
+}
+
+.remember span {
+    color: #999;
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+}
+
+
+/* =================================
+   MAIN BUTTON
+================================= */
+
+.main-button {
+    width: 100%;
+
+    padding: 18px;
+
+    border: 1px solid #f3eee4;
+
+    background: #f3eee4;
+
+    color: #050505;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.main-button:hover {
+    background: #c91524;
+
+    border-color: #c91524;
+
+    color: white;
+}
+
+
+/* =================================
+   REGISTER
+================================= */
+
+.register-box {
+    position: relative;
+
+    overflow: hidden;
+}
+
+.register-box::after {
+    content: "216";
+
+    position: absolute;
+
+    right: -30px;
+
+    bottom: -65px;
+
+    font-family: "Cinzel", serif;
+
+    font-size: 220px;
+
+    color: #111;
+
+    pointer-events: none;
+}
+
+
+/* BENEFITS */
+
+.register-content {
+    margin-top: 45px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.benefit {
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 20px 0;
+
+    border-bottom: 1px solid #222;
+}
+
+.benefit:first-child {
+    border-top: 1px solid #222;
+}
+
+.benefit span {
+    color: #c91524;
+
+    font-family: "Cinzel", serif;
+
+    font-size: 13px;
+}
+
+.benefit p {
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+}
+
+
+/* OUTLINE BUTTON */
+
+.outline-button {
+    display: block;
+
+    margin-top: 40px;
+
+    padding: 17px;
+
+    text-align: center;
+
+    border: 1px solid #777;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    position: relative;
+
+    z-index: 2;
+
+    transition: 0.3s;
+}
+
+.outline-button:hover {
+    background: #f3eee4;
+
+    color: #050505;
+
+    border-color: #f3eee4;
+}
+
+
+/* =================================
+   LOGIN MESSAGE
+================================= */
+
+.message {
+    display: none;
+
+    margin-top: 20px;
+
+    padding: 12px;
+
+    border: 1px solid #c91524;
+
+    color: #c91524;
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+
+    text-align: center;
+}
+
+
+/* =================================
+   STATEMENT
+================================= */
+
+.account-statement {
+    padding: 130px 20px;
+
+    text-align: center;
+
+    background: #f3eee4;
+
+    color: #050505;
+}
+
+.account-statement p {
+    color: #c91524;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 35px;
+}
+
+.account-statement h2 {
+    font-family: "Cinzel", serif;
+
+    font-size: clamp(35px, 6vw, 70px);
+
+    line-height: 1.1;
+
+    font-weight: 600;
+}
+
+.account-statement h2 span {
+    color: #c91524;
+}
+
+.account-statement div {
+    margin-top: 40px;
+
+    color: #c91524;
+
+    font-family: "Cinzel", serif;
+
+    font-size: 50px;
+
+    letter-spacing: 15px;
+}
+
+
+/* =================================
+   FOOTER
+================================= */
+
+footer {
+    padding: 70px 45px 30px;
+
+    border-top: 1px solid #292929;
+
+    text-align: center;
+}
+
+footer img {
+    width: 140px;
+
+    margin-bottom: 40px;
+}
+
+.footer-links {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 35px;
+
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: #c91524;
+}
+
+footer p {
+    margin-top: 60px;
+
+    color: #555;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+}
+
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width: 900px) {
+
+    .account-container {
+        grid-template-columns: 1fr;
+
+        max-width: 650px;
+
+        gap: 30px;
+    }
+
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 650px) {
+
+    .navbar {
+        height: 75px;
+
+        padding: 0 20px;
+
+        grid-template-columns: 1fr 80px 1fr;
+    }
+
+    .nav-logo img {
+        width: 75px;
+    }
+
+    .nav-left {
+        gap: 10px;
+    }
+
+    .nav-left a:nth-child(2),
+    .nav-left a:nth-child(3),
+    .nav-right a:nth-child(1),
+    .nav-right a:nth-child(2) {
+        display: none;
+    }
+
+    .nav-right {
+        gap: 10px;
+    }
+
+    .account-title {
+        padding: 80px 20px 60px;
+    }
+
+    .account-title h1 {
+        font-size: 55px;
+    }
+
+    .account-container {
+        padding: 0 20px 80px;
+    }
+
+    .account-box {
+        padding: 40px 25px;
+    }
+
+    .login-options {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+    .account-statement {
+        padding: 100px 20px;
+    }
+
+    footer {
+        padding: 60px 20px 30px;
+    }
+
+}

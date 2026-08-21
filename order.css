@@ -1,0 +1,401 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #050505;
+    color: #f3eee4;
+    font-family: "Montserrat", sans-serif;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    height: 90px;
+
+    display: grid;
+    grid-template-columns: 1fr 180px 1fr;
+
+    align-items: center;
+
+    padding: 0 45px;
+
+    border-bottom: 1px solid #292929;
+
+    background: #050505;
+
+    position: relative;
+    z-index: 10;
+}
+
+.nav-left {
+    display: flex;
+    gap: 35px;
+}
+
+.nav-left a,
+.nav-right a {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #f3eee4;
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+.nav-left a:hover,
+.nav-right a:hover {
+    color: #c91524;
+}
+.nav-right {
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;
+}
+
+
+/* LOGO */
+
+.logo img {
+    width: 75px;
+    height: 75px;
+
+    object-fit: contain;
+}
+
+
+/* =========================
+   ORDER
+========================= */
+
+.order-container {
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 80px 40px;
+}
+
+.order-container h1 {
+    text-align: center;
+
+    font-size: 40px;
+
+    letter-spacing: 3px;
+}
+
+.line {
+    width: 60px;
+    height: 3px;
+
+    background: #111;
+
+    margin: 25px auto 70px;
+}
+
+
+/* TWO COLUMNS */
+
+.order-layout {
+    display: grid;
+
+    grid-template-columns: 1.5fr 1fr;
+
+    gap: 70px;
+}
+
+
+/* =========================
+   CUSTOMER FORM
+========================= */
+
+.customer-info {
+    border: 1px solid #ddd;
+
+    padding: 40px;
+}
+
+.customer-info h2,
+.order-summary h2 {
+    font-size: 20px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 35px;
+}
+
+form {
+    display: flex;
+
+    flex-direction: column;
+}
+
+label {
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 8px;
+
+    margin-top: 20px;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+
+    border: 1px solid #ccc;
+
+    padding: 15px;
+
+    font-size: 14px;
+
+    font-family: Arial, sans-serif;
+
+    outline: none;
+
+    background: white;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #111;
+}
+
+textarea {
+    height: 100px;
+
+    resize: vertical;
+}
+
+
+/* CONFIRM BUTTON */
+
+form button {
+    margin-top: 35px;
+
+    padding: 19px;
+
+    background: #111;
+
+    color: white;
+
+    border: none;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    font-size: 13px;
+
+    cursor: pointer;
+}
+
+form button:hover {
+    background: #333;
+}
+
+
+/* =========================
+   ORDER SUMMARY
+========================= */
+
+.order-summary {
+    border: 1px solid #ddd;
+
+    padding: 40px;
+
+    height: fit-content;
+
+    position: sticky;
+
+    top: 30px;
+}
+
+.product-box {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    border-bottom: 1px solid #ddd;
+
+    padding-bottom: 25px;
+
+    margin-bottom: 25px;
+}
+
+.product-box h3 {
+    font-size: 15px;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 8px;
+}
+
+.product-box p {
+    font-size: 11px;
+
+    color: #777;
+
+    letter-spacing: 1px;
+}
+
+.product-box strong {
+    font-size: 15px;
+}
+
+
+/* SUMMARY ROW */
+
+.summary-line {
+    display: flex;
+
+    justify-content: space-between;
+
+    font-size: 12px;
+
+    margin-bottom: 20px;
+}
+
+
+/* TOTAL */
+
+.total-line {
+    display: flex;
+
+    justify-content: space-between;
+
+    border-top: 1px solid #ddd;
+
+    padding-top: 25px;
+
+    margin-top: 25px;
+
+    font-size: 18px;
+
+    letter-spacing: 1px;
+}
+
+
+/* PAYMENT */
+
+.payment {
+    text-align: center;
+
+    margin-top: 30px;
+
+    padding: 15px;
+
+    background: #f5f5f5;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #050505;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 60px 20px;
+
+    margin-top: 80px;
+}
+
+footer img {
+    width: 90px;
+
+    margin-bottom: 20px;
+}
+
+footer p {
+    color: #aaa;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 20px;
+}
+
+.copyright {
+    border-top: 1px solid #333;
+
+    padding-top: 25px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+    .navbar {
+        height: auto;
+
+        flex-direction: column;
+
+        gap: 20px;
+
+        padding: 20px;
+    }
+
+    .nav-left,
+    .nav-right {
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 15px;
+    }
+
+    .logo {
+        order: -1;
+    }
+
+    .order-container {
+        padding: 50px 20px;
+    }
+
+    .order-container h1 {
+        font-size: 28px;
+    }
+
+    .order-layout {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+
+    .order-summary {
+        position: static;
+    }
+
+    .customer-info,
+    .order-summary {
+        padding: 25px;
+    }
+}

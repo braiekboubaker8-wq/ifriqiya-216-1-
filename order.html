@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Order | IFRIQYA 216</title>
+
+    <link rel="stylesheet" href="order.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+
+        <div class="nav-left">
+
+            <a href="index.html">HOME</a>
+
+            <a href="shop.html">SHOP</a>
+
+            <a href="about.html">ABOUT US</a>
+
+        </div>
+
+
+        <!-- LOGO -->
+
+        <a href="index.html" class="logo">
+            <img src="logo216.png" alt="IFRIQYA 216">
+        </a>
+
+
+        <div class="nav-right">
+
+            <a href="search.html">SEARCH</a>
+
+            <a href="account.html">ACCOUNT</a>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ORDER PAGE -->
+
+    <main class="order-container">
+
+        <h1>PLACE YOUR ORDER</h1>
+
+        <div class="line"></div>
+
+
+        <div class="order-layout">
+
+
+            <!-- CUSTOMER INFORMATION -->
+
+            <section class="customer-info">
+
+                <h2>YOUR INFORMATION</h2>
+
+                <form action="https://formsubmit.co/braiekboubaker8@gmail.com" method="POST">
+
+                    <input type="hidden" name="_subject" value="NEW IFRIQIYA 216 ORDER">
+                    <input type="hidden" name="_template" value="table">
+                
+                    <label>Full Name</label>
+                    <input type="text" name="name" required>
+                
+                    <label>Phone Number</label>
+                    <input type="tel" name="phone" required>
+                
+                    <label>Address</label>
+                    <input type="text" name="address" required>
+                
+                    <label>City</label>
+                    <input type="text" name="city" required>
+                
+                    <label>Size</label>
+                    <select name="size" required>
+                        <option value="">Choose size</option>
+                        <option>S</option>
+                        <option>M</option>
+                        <option>L</option>
+                        <option>XL</option>
+                        <option>XXL</option>
+                    </select>
+                
+                    <button type="submit">PLACE ORDER</button>
+                
+                </form>
+
+            </section>
+
+
+
+            <!-- ORDER SUMMARY -->
+
+            <section class="order-summary">
+
+                <h2>YOUR ORDER</h2>
+
+
+                <div class="product-box">
+
+                    <div>
+
+                        <h3 id="productName">
+                            Product
+                        </h3>
+
+                        <p>
+                            IFRIQYA 216
+                        </p>
+
+                    </div>
+
+
+                    <strong>
+                        <span id="productPrice">
+                            0
+                        </span>
+                        TND
+                    </strong>
+
+                </div>
+
+
+
+                <div class="summary-line">
+
+                    <span>
+                        QUANTITY
+                    </span>
+
+                    <span id="summaryQuantity">
+                        1
+                    </span>
+
+                </div>
+
+
+
+                <div class="summary-line">
+
+                    <span>
+                        SHIPPING
+                    </span>
+
+                    <span>
+                        FREE
+                    </span>
+
+                </div>
+
+
+
+                <div class="total-line">
+
+                    <span>
+                        TOTAL
+                    </span>
+
+                    <strong>
+                        <span id="totalPrice">
+                            0
+                        </span>
+                        TND
+                    </strong>
+
+                </div>
+
+
+                <p class="payment">
+                    PAYMENT ON DELIVERY
+                </p>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <img src="logo216.png" alt="IFRIQYA 216">
+
+        <p>
+            IFRIQYA 216 — TUNISIAN CLOTHING BRAND
+        </p>
+
+        <p class="copyright">
+            © 2026 IFRIQYA 216. ALL RIGHTS RESERVED.
+        </p>
+
+    </footer>
+
+
+
+    <script>
+
+        // GET PRODUCT INFORMATION FROM URL
+
+        const params = new URLSearchParams(
+            window.location.search
+        );
+
+
+        const product =
+            params.get("product") || "Product";
+
+
+        const price =
+            parseFloat(params.get("price")) || 0;
+
+
+
+        // DISPLAY PRODUCT
+
+        document.getElementById("productName").textContent =
+            product;
+
+
+        document.getElementById("productPrice").textContent =
+            price.toFixed(2);
+
+
+
+        // CALCULATE TOTAL
+
+        const quantityInput =
+            document.getElementById("quantity");
+
+
+        function updateTotal() {
+
+            const quantity =
+                parseInt(quantityInput.value) || 1;
+
+
+            const total =
+                price * quantity;
+
+
+            document.getElementById("summaryQuantity")
+                .textContent = quantity;
+
+
+            document.getElementById("totalPrice")
+                .textContent = total.toFixed(2);
+        }
+
+
+        quantityInput.addEventListener(
+            "input",
+            updateTotal
+        );
+
+
+        updateTotal();
+
+
+
+        // CONFIRM ORDER
+
+        document.getElementById("orderForm")
+            .addEventListener("submit", function(event) {
+
+                event.preventDefault();
+
+
+                const name =
+                    document.getElementById("name").value;
+
+                const phone =
+                    document.getElementById("phone").value;
+
+                const city =
+                    document.getElementById("city").value;
+
+                const address =
+                    document.getElementById("address").value;
+
+                const size =
+                    document.getElementById("size").value;
+
+                const quantity =
+                    document.getElementById("quantity").value;
+
+
+                alert(
+                    "Thank you " + name +
+                    "! Your order has been received."
+                );
+
+
+                console.log("NEW ORDER");
+
+                console.log("Product:", product);
+
+                console.log("Price:", price + " TND");
+
+                console.log("Size:", size);
+
+                console.log("Quantity:", quantity);
+
+                console.log("Name:", name);
+
+                console.log("Phone:", phone);
+
+                console.log("City:", city);
+
+                console.log("Address:", address);
+
+            });
+
+    </script>
+
+</body>
+</html>

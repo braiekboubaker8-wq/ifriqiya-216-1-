@@ -1,0 +1,431 @@
+/* ==============================
+   IFRIQIYA 216
+   CREATE ACCOUNT
+   ============================== */
+
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #050505;
+    color: #f4f0e8;
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+}
+
+
+/* ==============================
+   HEADER
+   ============================== */
+
+.header {
+    height: 100px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 20px 6%;
+
+    border-bottom: 1px solid #292929;
+}
+
+.logo-link img {
+    width: 95px;
+    height: auto;
+}
+
+.back-link {
+    color: #f4f0e8;
+    text-decoration: none;
+
+    font-size: 12px;
+    letter-spacing: 2px;
+
+    transition: 0.3s;
+}
+
+.back-link:hover {
+    color: #d71920;
+}
+
+
+/* ==============================
+   MAIN
+   ============================== */
+
+.register-page {
+    min-height: calc(100vh - 160px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 70px 20px;
+}
+
+.register-container {
+    width: 1100px;
+    max-width: 100%;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    border: 1px solid #292929;
+}
+
+
+/* ==============================
+   LEFT INTRO
+   ============================== */
+
+.register-intro {
+    padding: 70px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    border-right: 1px solid #292929;
+
+    background:
+        linear-gradient(
+            135deg,
+            #090909,
+            #111111
+        );
+}
+
+.small-title {
+    color: #d71920;
+
+    font-size: 12px;
+    letter-spacing: 5px;
+
+    margin-bottom: 30px;
+}
+
+.register-intro h1 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(55px, 6vw, 90px);
+
+    line-height: 0.88;
+
+    font-weight: normal;
+
+    letter-spacing: -3px;
+}
+
+.red-line {
+    width: 100px;
+    height: 2px;
+
+    background: #d71920;
+
+    margin: 40px 0 30px;
+}
+
+.intro-text {
+    max-width: 370px;
+
+    color: #a7a7a7;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+.arabic {
+    margin-top: 50px;
+
+    color: #d71920;
+
+    font-size: 28px;
+}
+
+
+/* ==============================
+   REGISTER BOX
+   ============================== */
+
+.register-box {
+    background: #0b0b0b;
+
+    padding: 60px;
+}
+
+.box-header {
+    margin-bottom: 40px;
+}
+
+.box-header span {
+    color: #d71920;
+
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+.box-header h2 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 36px;
+    font-weight: normal;
+
+    margin: 12px 0;
+}
+
+.box-header p {
+    color: #777;
+
+    font-size: 13px;
+}
+
+
+/* ==============================
+   FORM
+   ============================== */
+
+.input-group {
+    margin-bottom: 22px;
+}
+
+.input-group label {
+    display: block;
+
+    color: #999;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 9px;
+}
+
+.input-group input {
+    width: 100%;
+
+    height: 48px;
+
+    background: transparent;
+
+    border: none;
+    border-bottom: 1px solid #444;
+
+    color: #f4f0e8;
+
+    padding: 0 5px;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+.input-group input:focus {
+    border-bottom-color: #d71920;
+}
+
+.input-group input::placeholder {
+    color: #555;
+}
+
+
+/* ==============================
+   TERMS
+   ============================== */
+
+.terms {
+    margin: 25px 0;
+}
+
+.terms label {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 10px;
+
+    color: #777;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+
+    cursor: pointer;
+}
+
+.terms input {
+    margin-top: 2px;
+
+    accent-color: #d71920;
+}
+
+
+/* ==============================
+   MESSAGE
+   ============================== */
+
+.message {
+    min-height: 20px;
+
+    margin-bottom: 15px;
+
+    font-size: 12px;
+
+    text-align: center;
+}
+
+.message.error {
+    color: #d71920;
+}
+
+.message.success {
+    color: #6fcf72;
+}
+
+
+/* ==============================
+   CREATE BUTTON
+   ============================== */
+
+.create-button {
+    width: 100%;
+
+    height: 52px;
+
+    border: 1px solid #f4f0e8;
+
+    background: #f4f0e8;
+
+    color: #050505;
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.create-button:hover {
+    background: #d71920;
+
+    border-color: #d71920;
+
+    color: white;
+}
+
+
+/* ==============================
+   LOGIN LINK
+   ============================== */
+
+.login-link {
+    margin-top: 30px;
+
+    text-align: center;
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+
+    color: #666;
+}
+
+.login-link a {
+    color: #f4f0e8;
+
+    text-decoration: none;
+
+    margin-left: 8px;
+
+    transition: 0.3s;
+}
+
+.login-link a:hover {
+    color: #d71920;
+}
+
+
+/* ==============================
+   FOOTER
+   ============================== */
+
+footer {
+    border-top: 1px solid #292929;
+
+    text-align: center;
+
+    padding: 25px;
+
+    color: #555;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+}
+
+
+/* ==============================
+   RESPONSIVE
+   ============================== */
+
+@media (max-width: 800px) {
+
+    .register-container {
+        grid-template-columns: 1fr;
+    }
+
+    .register-intro {
+        border-right: none;
+
+        border-bottom: 1px solid #292929;
+
+        padding: 50px 35px;
+    }
+
+    .register-intro h1 {
+        font-size: 55px;
+    }
+
+    .register-box {
+        padding: 40px 30px;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .header {
+        height: 80px;
+
+        padding: 15px 25px;
+    }
+
+    .logo-link img {
+        width: 70px;
+    }
+
+    .register-page {
+        padding: 30px 15px;
+    }
+
+    .register-intro {
+        padding: 40px 25px;
+    }
+
+    .register-intro h1 {
+        font-size: 45px;
+    }
+
+    .register-box {
+        padding: 35px 20px;
+    }
+
+}
