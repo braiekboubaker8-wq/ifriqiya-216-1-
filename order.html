@@ -62,7 +62,7 @@
 
                 <h2>YOUR INFORMATION</h2>
 
-                <form action="https://formsubmit.co/braiekboubaker8@gmail.com" method="POST">
+                <form id="orderForm" action="https://formsubmit.co/braiekboubaker8@gmail.com" method="POST">
 
                     <input type="hidden" name="_subject" value="NEW IFRIQYA 216 ORDER">
 <input type="hidden" name="_template" value="table">
@@ -213,122 +213,70 @@
 
 
     <script>
-
         // GET PRODUCT INFORMATION FROM URL
-
-        const params = new URLSearchParams(
-            window.location.search
-        );
-
-
-        const product =
-            params.get("product") || "Product";
-
-
-        const price =
-            parseFloat(params.get("price")) || 0;
-
-
-
+        const params = new URLSearchParams(window.location.search);
+        const product = params.get("product") || "Product";
+        const price = parseFloat(params.get("price")) || 0;
+    
         // DISPLAY PRODUCT
-
-        document.getElementById("productName").textContent =
-            product;
-
-
-        document.getElementById("productPrice").textContent =
-            price.toFixed(2);
-
-
-
-        // CALCULATE TOTAL
-
-        const quantityInput =
-            document.getElementById("quantity");
-
-
-        function updateTotal() {
-
-            const quantity =
-                parseInt(quantityInput.value) || 1;
-
-
-            const total =
-                price * quantity;
-
-
-            document.getElementById("summaryQuantity")
-                .textContent = quantity;
-
-
-            document.getElementById("totalPrice")
-                .textContent = total.toFixed(2);
-        }
-
-
-        quantityInput.addEventListener(
-            "input",
-            updateTotal
-        );
-
-
-        updateTotal();
-
-
-
-        // CONFIRM ORDER
-
-        document.getElementById("orderForm")
-            .addEventListener("submit", function(event) {
-
-                event.preventDefault();
-
-
-                const name =
-                    document.getElementById("name").value;
-
-                const phone =
-                    document.getElementById("phone").value;
-
-                const city =
-                    document.getElementById("city").value;
-
-                const email =
-                    document.getElementById("email").value;
-
-                const size =
-                    document.getElementById("size").value;
-
-                const quantity =
-                    document.getElementById("quantity").value;
-
-
-                alert(
-                    "Thank you " + name +
-                    "! Your order has been received."
-                );
-
-
-                console.log("NEW ORDER");
-
-                console.log("Product:", product);
-
-                console.log("Price:", price + " TND");
-
-                console.log("Size:", size);
-
-                console.log("Quantity:", quantity);
-
-                console.log("Name:", name);
-
-                console.log("Phone:", phone);
-
-                console.log("City:", city);
-
-                console.log("Address:", address);
-
+        document.getElementById("productName").textContent = product;
+        document.getElementById("productPrice").textContent = price.toFixed(2);
+    
+        // FIXED QUANTITY (no quantity input in this form, so it's always 1)
+        const quantity = 1;
+        document.getElementById("summaryQuantity").textContent = quantity;
+        document.getElementById("totalPrice").textContent = (price * quantity).toFixed(2);
+    
+        // HANDLE FORM SUBMIT WITHOUT LEAVING THE PAGE
+        const form = document.getElementById("orderForm");
+    
+        form.addEventListener("submit", function (event) {
+            event.preventDefault(); // stop normal navigation
+    
+            const formData = new FormData(form);
+            formData.append("product", product);
+            formData.append("price", price);
+            formData.append("quantity", quantity);
+    
+            // disable button while sending
+            const btn = form.querySelector("button[type='submit']");
+            const originalText = btn.textContent;
+            btn.disabled = true;
+            btn.textContent = "SENDING...";
+    
+            fetch(form.action, {
+                method: "POST",
+                body: formData,
+                headers: { "Accept": "application/json" }
+            })
+            .then(response => {
+                if (response.ok) {
+                    showOrderMessage("Thank you! Your order has been received. We will contact you shortly.");
+                    form.reset();
+                } else {
+                    showOrderMessage("Something went wrong. Please try again.", true);
+                }
+            })
+            .catch(() => {
+                showOrderMessage("Network error. Please check your connection and try again.", true);
+            })
+            .finally(() => {
+                btn.disabled = false;
+                btn.textContent = originalText;
             });
-
+        });
+    
+        function showOrderMessage(text, isError = false) {
+            let msg = document.getElementById("orderMessage");
+            if (!msg) {
+                msg = document.createElement("p");
+                msg.id = "orderMessage";
+                form.insertAdjacentElement("afterend", msg);
+            }
+            msg.textContent = text;
+            msg.style.color = isError ? "red" : "green";
+            msg.style.marginTop = "12px";
+        }
     </script>
 
 </body>
